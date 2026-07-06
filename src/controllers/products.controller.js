@@ -7,9 +7,9 @@ import {
 } from "../models/Product.js";
 
 export const getProducts = async (req, res) => {
-  res.json("hola");
+  //res.json("hola");
   const products = await getProductsModel();
-  res.json(products);
+  return res.json(products);
 };
 
 export const getProductById = async (req, res) => {
@@ -23,7 +23,7 @@ export const getProductById = async (req, res) => {
     });
   }
 
-  res.json(product);
+  return res.json(product);
 };
 
 export const createProduct = async (req, res) => {
@@ -41,7 +41,7 @@ export const createProduct = async (req, res) => {
     stock,
   });
 
-  res.status(201).json(newProduct);
+  return res.status(201).json(newProduct);
 };
 
 export const updateProduct = async (req, res) => {
@@ -64,7 +64,7 @@ export const updateProduct = async (req, res) => {
     return res.status(404).json({ message: "Producto no encontrado" });
   }
 
-  res.json(updatedProduct);
+  return res.json(updatedProduct);
 };
 
 export const deleteProduct = async (req, res) => {
@@ -76,7 +76,7 @@ export const deleteProduct = async (req, res) => {
     return res.status(404).json({ message: "Producto no encontrado" });
   }
 
-  res.json({
+  return res.json({
     message: "Producto eliminado",
     product: deletedProduct,
   });

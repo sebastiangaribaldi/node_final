@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "node --watch index.js",
+        "dev": "cross-env GRPC_PROXY=http://10.71.110.33:8080 http_proxy=http://10.71.110.33:8080 https_proxy=http://10.71.110.33:8080 node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian Garibaldi",
