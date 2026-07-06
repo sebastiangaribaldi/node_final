@@ -7,8 +7,9 @@ import {
 } from "../models/Product.js";
 
 export const getProducts = async (req, res) => {
-  const products = await getProductsModel();
-  res.json(products);
+  res.json("hola");
+  //const products = await getProductsModel();
+  //res.json(products);
 };
 
 export const getProductById = async (req, res) => {
