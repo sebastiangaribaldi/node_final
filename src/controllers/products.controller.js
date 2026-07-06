@@ -8,8 +8,8 @@ import {
 
 export const getProducts = async (req, res) => {
   res.json("hola");
-  //const products = await getProductsModel();
-  //res.json(products);
+  const products = await getProductsModel();
+  res.json(products);
 };
 
 export const getProductById = async (req, res) => {
